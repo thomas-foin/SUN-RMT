@@ -1,0 +1,37 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="template/manager.xhtml">
+
+    <ui:define name="title">
+        <h:outputText value="Add employee" />
+    </ui:define>
+    
+    <ui:define name="content">
+        <h:form>
+            <h:outputLabel for="username" value="Username :"/>
+            <h:inputText id="username" value="#{employeeController.employee.username}" /><br/>
+            
+            <h:outputLabel for="password" value="Password :"/>
+            <h:inputText id="password" value="#{employeeController.employee.password}" /><br/>
+            
+            <h:outputLabel for="firstname" value="First name :"/>
+            <h:inputText id="firstname" value="#{employeeController.employee.firstname}" /><br/>
+            
+            <h:outputLabel for="lastname" value="Last name :"/>
+            <h:inputText id="lastname" value="#{employeeController.employee.lastname}" /><br/>
+            
+            <h:outputLabel for="email" value="Email :"/>
+            <h:inputText id="email" value="#{employeeController.employee.email}" /><br/>
+            
+            <h:outputLabel for="brithdate" value="Birth date :"/>
+            <h:inputText id="birthdate" value="#{employeeController.employee.birthDate}">
+                <f:convertDateTime pattern="dd/MM/yyyy" />
+            </h:inputText><br/>
+            
+            <h:commandButton value="Create" action="#{employeeController.create()}" /><br/>
+        </h:form>
+    </ui:define>
+</ui:composition>
+
